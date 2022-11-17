@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: black;
+    background-color: black;
+}
+
+/* header superior  */
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:#fff;
+}
+
+.header_superior{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px   
+}
+*/
+.logo img{
+    width: 60px;
+}
+
+.search input{
+    width: 250px;
+    padding: 5px;
+}
+
+input{
+    display: block;
+    margin: 5px;
+}

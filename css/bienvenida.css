@@ -1,0 +1,93 @@
+body{
+    background: url(/imagenes/por-que-se-perdio-el-prestigio-de-la-profesion-docente-en-america-latina.jpg)no-repeat top center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.box-bienvenida{
+    width: 220px;
+    height: 400px;
+    background: #041926;
+    box-shadow: 0 0 5px 5px #62C2A1;
+    color: #fff;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 50px 20px;
+    border-radius: 2%;
+}
+
+
+.box-bienvenida .logo-sena img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 35px);
+}
+
+.box-bienvenida h1{
+    font-family: Amerrican Typewriter;
+    margin: 0;
+    padding: 35px 0px 0px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.box-bienvenida .logo-RatingSoft img{
+    width: 130px;
+    height: 130px;
+    top: 8px;
+    position: relative;
+    left: calc(50% - 65px);
+    border-radius: 75px;
+}
+
+.box-bienvenida p.eslogan{
+    margin: 10px;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    font-family: American Typewriter;
+    font-size: 18px;
+}
+
+.box-bienvenida p.bienvenidos{
+    text-align: center;
+    font-family: American Typewriter;
+    font-size: 25px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.box-bienvenida input{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-family: American Typewriter;
+    font-weight: bold;
+    background-color: aqua;
+}
+
+.box-bienvenida a:hover{
+    color: rgb(227, 13, 13);
+    cursor: pointer;
+
+}
+
+.box-bienvenida a{
+    background-color: aqua;
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+    padding:0px 40px 0px;
+    font-family: American Typewriter;
+    font-weight: bold;
+}

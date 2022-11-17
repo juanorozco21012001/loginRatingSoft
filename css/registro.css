@@ -1,0 +1,114 @@
+ body{
+    margin: 0;
+    padding: 0;
+    background:url(../imagenes/por-que-se-perdio-el-prestigio-de-la-profesion-docente-en-america-latina.jpg)no-repeat top;
+    background-size:cover;
+    font-family: sans-serif;
+    height: 100vh;
+ }
+
+
+.box-registro {
+    width: 250PX;
+    height: 440PX;
+    background-color:#041926;
+    box-shadow: 0 0 5px 5px #62C2A1;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 5px 15px;
+    border-radius: 2%;
+}
+
+.box-registro .logo-RatingSoft img{
+    width: 130px;
+    height: 130px;
+    top: 8px;
+    position: relative;
+    left: calc(50% - 65px);
+    border-radius: 75px;
+    padding: 0 0 5px 0;
+    border: 0;
+}
+
+.box-registro h1{
+    font-family: American Typewriter;
+    margin: 0;
+    padding: 5px 0 0 2PX;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+ }
+
+.box-registro h2{
+    margin: 5px 0 0 0;
+    font-family: American Typewriter;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+}
+.box-registro input{
+    width: 100%;
+    margin: 5px 0 2px 0;
+}
+.box-registro input[type="text"], .box-registro input[type="email"], .box-registro input[type="password"]{
+    /* border: none; */
+    border-bottom: 1px solid white ;
+    background: transparent;
+    outline: none;
+    height: 20px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.box-registro input[type="checkbox"]{
+    width: 12px;
+    height: 12px;
+    padding: 4px 0 0 0;
+    margin-bottom: 2px;
+}
+
+.box-registro label{
+    font-size: 10px;
+    margin:0;
+    padding: 0;
+}
+
+
+/* .box-registro input[type="submit"]{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 20px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: white;
+    font-family: Anerican Typewriter;
+    font-weight: bold;
+    font-size: 14px;
+} */
+
+.box-registro input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.box-registro a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 10px;
+    color: darkgray;
+    padding-bottom: 10px;
+}
+
+.box-registro a:hover{
+    color: #26D2F9;
+}
+
+.box-registro .btnregistar{
+    color: white;
+}
+
+

@@ -6,7 +6,12 @@ include_once('db.php');
     $consulta="SELECT * FROM `usuarios`";
     $ejecutar = mysqli_query($conectar,$consulta);
 
-    $row=mysqli_fetch_array($ejecutar);
+
+    echo "<br>";
+    echo "<hr>";
+    //print_r($r);
+    echo "<hr>";
+    echo "<br>";
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +28,9 @@ include_once('db.php');
 <body>
     <header>
         <div class="header_superior">
-            <div class="logo">
+            <!--<div class="logo">
               <img src="./imagenes/logoRatingSoft.jpg" alt="logo RatingSoft">
-            </div>
+            </div>-->
             <div class="search">
               <input type="search" placeholder="¿Qué deseas buscar?">
             </div>
@@ -40,14 +45,34 @@ include_once('db.php');
                 <tr>
 
                   <td>
-                    <input type="text" class="form-control form-control-sm" name="nombres" placeholder="Ingrese su Nombre" required>
-                  <input type="text" class="form-control form-control-sm" name="apellidos" placeholder="Ingrese su Apellido" required>
-                  <input type="email" class="form-control form-control-sm" name="correo" placeholder="Ingrese su Correo" required>
-                  <input type="text" class="form-control form-control-sm" name="usuario" placeholder="Ingrese su Usuario" required>
-                  <input type="password" class="form-control form-control-sm" name="clave" placeholder="Ingrese su Contraseña" required>
+                    <?php
+                      if(isset($_POST["accion"])){
+                        echo '<input type="hidden" name="accion" id="accion" value="'.$_POST["accion"].'" required>';
+                        echo '<input type="hidden" name="id_usuario" id="accion" value="'.$_POST["edi_id"].'" required>';
+                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_nombre"].'" name="nombres" required>';      
+                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_apellido"].'" name="apellidos"  required>';
+                        echo '<input type="email" class="form-control form-control-sm" value="'.$_POST["edi_correo"].'" name="correo" placeholder="Ingrese su Correo" required>';
+                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_usuario"].'" name="usuario" placeholder="Ingrese su Usuario" required>';
+                        echo '<input type="password" class="form-control form-control-sm" value="'.$_POST["edi_clave"].'" name="clave" placeholder="Ingrese su Contraseña" required>';
+                      }else{
+                        echo '<input type="hidden" name="accion" id="accion" value="agregar">';
+                        echo '<input type="hidden" name="id_usuario" id="accion" value="">';
+                        echo '<input type="text" class="form-control form-control-sm" value="" name="nombres" required>';      
+                        echo '<input type="text" class="form-control form-control-sm" value="" name="apellidos"  required>';
+                        echo '<input type="email" class="form-control form-control-sm" value="" name="correo" placeholder="Ingrese su Correo" required>';
+                        echo '<input type="text" class="form-control form-control-sm" value="" name="usuario" placeholder="Ingrese su Usuario" required>';
+                        echo '<input type="password" class="form-control form-control-sm" value="" name="clave" placeholder="Ingrese su Contraseña" required>';
+                      }
+                    ?>
+                  
+                  
+                  
+                  
+                  
+                  
 
-
-                  <input type="submit" name="insertar" value="agregar">
+                  <br>
+                  <input type="submit" name="insertar" value="Guardar" class="btn btn-primary">
                   </td>
                 </tr>
               </table>
@@ -82,8 +107,19 @@ include_once('db.php');
                 <th><?php echo $row['clave']?></th>
 
 
-                <th><a href="actualizar.php? id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-info">Editar</a></th>
-                <th><a href="delete.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger">Eliminar</a></th>
+                <th>
+                  <form action="usuario.php" method="post">
+                    <input type="hidden" name="accion" value="editar">
+                    <input type="hidden" name="edi_id" value="<?php echo $row['id_usuario'] ?>">
+                    <input type="hidden" name="edi_nombre" value="<?php echo $row['nombre'] ?>">
+                    <input type="hidden" name="edi_apellido" value="<?php echo $row['apellido'] ?>">
+                    <input type="hidden" name="edi_correo" value="<?php echo $row['correo'] ?>">
+                    <input type="hidden" name="edi_usuario" value="<?php echo $row['usuario'] ?>">
+                    <input type="hidden" name="edi_clave" value="<?php echo $row['clave'] ?>">
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                  </form>
+                  <a href="delete.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
+                </th>
 
                </tr>
             <?php

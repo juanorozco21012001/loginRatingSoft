@@ -20,19 +20,66 @@ include_once('db.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/usuarios.css">
+    <link rel="stylesheet" href="./usuarios.css">
     <link rel="shortcut icon" href="./imagenes/logoRatingSoft.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>RatingSoft / usuarios</title>
+<style>
+  *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+  }
+
+  /*header superior*/
+
+  header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:#fff;
+    background:#D6E4E5;
+  }
+
+  .header_superior{
+    max-width: 1200px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px   
+  }
+  .header_superior .logo img{
+    width: 60px;
+  }
+
+  .search input{
+    width: 250px;
+    padding: 5px;
+  }
+
+  input{
+    display: block;
+    margin: 5px;
+  }
+  body{
+  }
+</style>
+
 </head>
 <body>
+  
     <header>
         <div class="header_superior">
-            <!--<div class="logo">
-              <img src="./imagenes/logoRatingSoft.jpg" alt="logo RatingSoft">
-            </div>-->
+            <div class="logo mb-3">
+            <img src="./imagenes/logoRatingSoft.jpg" alt="logo RatingSoft">
+            </div>
             <div class="search">
-              <input type="search" placeholder="¿Qué deseas buscar?">
+              <input type="search" placeholder="¿Qué deseas buscar?" class="mb-3 form-control">
             </div>
           </div>
     </header>
@@ -47,29 +94,23 @@ include_once('db.php');
                   <td>
                     <?php
                       if(isset($_POST["accion"])){
-                        echo '<input type="hidden" name="accion" id="accion" value="'.$_POST["accion"].'" required>';
-                        echo '<input type="hidden" name="id_usuario" id="accion" value="'.$_POST["edi_id"].'" required>';
-                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_nombre"].'" name="nombres" required>';      
-                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_apellido"].'" name="apellidos"  required>';
-                        echo '<input type="email" class="form-control form-control-sm" value="'.$_POST["edi_correo"].'" name="correo" placeholder="Ingrese su Correo" required>';
-                        echo '<input type="text" class="form-control form-control-sm" value="'.$_POST["edi_usuario"].'" name="usuario" placeholder="Ingrese su Usuario" required>';
-                        echo '<input type="password" class="form-control form-control-sm" value="'.$_POST["edi_clave"].'" name="clave" placeholder="Ingrese su Contraseña" required>';
+                        echo '<input type="hidden" name="accion" id="accion" class="mb-3" value="'.$_POST["accion"].'"';
+                        echo '<input type="hidden" name="id_usuario" id="accion" class="mb-3" value="'.$_POST["edi_id"].'"';
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="'.$_POST["edi_nombre"].'" name="nombres" placeholder="Ingrese su Nombre">';      
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="'.$_POST["edi_apellido"].'" name="apellidos" placeholder="Ingrese su Apellido">';
+                        echo '<input type="email" class="form-control form-control-sm mb-3" value="'.$_POST["edi_correo"].'" name="correo" placeholder="Ingrese su Correo" >';
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="'.$_POST["edi_usuario"].'" name="usuario" placeholder="Ingrese su Usuario">';
+                        echo '<input type="password" class="form-control form-control-sm mb-3" value="'.$_POST["edi_clave"].'" name="clave" placeholder="Ingrese su Contraseña"';
                       }else{
-                        echo '<input type="hidden" name="accion" id="accion" value="agregar">';
-                        echo '<input type="hidden" name="id_usuario" id="accion" value="">';
-                        echo '<input type="text" class="form-control form-control-sm" value="" name="nombres" required>';      
-                        echo '<input type="text" class="form-control form-control-sm" value="" name="apellidos"  required>';
-                        echo '<input type="email" class="form-control form-control-sm" value="" name="correo" placeholder="Ingrese su Correo" required>';
-                        echo '<input type="text" class="form-control form-control-sm" value="" name="usuario" placeholder="Ingrese su Usuario" required>';
-                        echo '<input type="password" class="form-control form-control-sm" value="" name="clave" placeholder="Ingrese su Contraseña" required>';
+                        echo '<input type="hidden" name="accion" id="accion" class="mb-3" value="agregar" requiered>';
+                        echo '<input type="hidden" name="id_usuario" id="accion" class="mb-3"  value="" requiered>';
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="" name="nombres" placeholder="Ingrese su Nombre" required>';      
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="" name="apellidos" placeholder="Ingrese su Apellido"  required>';
+                        echo '<input type="email" class="form-control form-control-sm mb-3" value="" name="correo" placeholder="Ingrese su Correo" required>';
+                        echo '<input type="text" class="form-control form-control-sm mb-3" value="" name="usuario" placeholder="Ingrese su Usuario" required>';
+                        echo '<input type="password" class="form-control form-control-sm mb-3" value="" name="clave" placeholder="Ingrese su Contraseña" required>';
                       }
                     ?>
-                  
-                  
-                  
-                  
-                  
-                  
 
                   <br>
                   <input type="submit" name="insertar" value="Guardar" class="btn btn-primary">
@@ -80,7 +121,7 @@ include_once('db.php');
         </div>
 
         <div class="col-md-8">
-          <table class="table">
+          <table class="table table-bordered">
             <thead class="table-success table-striped" >
               <tr>
                 <th>Codigo</th>
@@ -118,7 +159,10 @@ include_once('db.php');
                     <input type="hidden" name="edi_clave" value="<?php echo $row['clave'] ?>">
                     <button type="submit" class="btn btn-primary">Editar</button>
                   </form>
-                  <a href="delete.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
+                  <th>
+                    <a href="delete.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
+                  </th>
+                  
                 </th>
 
                </tr>
@@ -133,8 +177,5 @@ include_once('db.php');
           
       </div>
     </div>
-
-   
-    
 </body>
 </html>

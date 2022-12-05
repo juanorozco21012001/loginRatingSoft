@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
     text-decoration: none;
+   
 }
 
 /* header superior */
@@ -34,6 +35,52 @@ header{
     padding: 5px;
 }
 
+.inicio_sesion{
+    margin-left: 480px;
+}
+
+
+h2{
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+
+.imagen-vista img{
+    height:400px;
+    width: 1250px;
+    background-size: cover;
+}
+
+.inicio_sesion .regis{
+    margin: 10px;
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    font-size: 14px;
+    background-color: #015668;
+}
+.inicio_sesion .regis:hover{
+    background-color: #2077b1;
+}
+
+.inicio_sesion .ingres{
+    margin: 10px;
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    font-size: 14px;
+    background-color: #015668;
+}
+
+.inicio_sesion .ingres:hover{
+    background-color: #2077b1;
+}
+
 /*BARRA MENU*/
 .container_menu{
     width: 100%;
@@ -41,7 +88,6 @@ header{
     background-color:#015668 ;
     padding:0px 40px;
 }
-
 .menu{
     max-width: 1200px;
     margin: auto;

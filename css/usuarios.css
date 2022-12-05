@@ -1,14 +1,13 @@
-/* *{
+ /* *{
     margin: 0;
     padding:0;
     box-sizing: border-box;
     font-family: sans-serif;
     text-decoration: none;
     color: black;
-    background-color: black;
 }
 
-/* header superior  */
+header superior
 
 header{
     width: 100%;
@@ -26,9 +25,9 @@ header{
     justify-content: space-between;
     padding: 10px   
 }
-*/
-.logo img{
+.header_superior .logo img{
     width: 60px;
+    background-color: aqua;
 }
 
 .search input{
@@ -39,4 +38,4 @@ header{
 input{
     display: block;
     margin: 5px;
-} 
+}  */

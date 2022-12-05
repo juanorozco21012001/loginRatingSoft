@@ -29,8 +29,5 @@ if(isset($_POST['accion'])){
 
   }  
 }
-
-
-
  header("location:usuario.php");
 ?>

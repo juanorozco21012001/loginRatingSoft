@@ -12,7 +12,7 @@ $resultado=mysqli_query($conectar, $consulta);
 $filas=mysqli_num_rows($resultado);
 
 if($filas>0){
-    header("location:inicio.html");
+    header("location:usuario.php");
 }
 else{
     echo "error en la autentificacion";
